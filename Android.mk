@@ -77,6 +77,7 @@ LOCAL_STATIC_LIBRARIES := \
     libpng \
     libfs_mgr \
     libcrypto_static \
+    libcrypto_utils_static \
     libbase \
     libcutils \
     libutils \
