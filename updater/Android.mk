@@ -66,7 +66,6 @@ define generate-register-inc
     $(hide) echo "}" >> $(1)
 endef
 
-
 # updater (static executable)
 # ===============================
 include $(CLEAR_VARS)
