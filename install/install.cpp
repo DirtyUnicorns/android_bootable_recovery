@@ -167,13 +167,18 @@ static int CheckAbSpecificMetadata(const std::map<std::string, std::string>& met
   if (pkg_post_timestamp_string.empty() ||
       !android::base::ParseInt(pkg_post_timestamp_string, &pkg_post_timestamp) ||
       pkg_post_timestamp < build_timestamp) {
+
     if (get_value(metadata, "ota-downgrade") != "yes") {
+/*
       LOG(ERROR) << "Update package is older than the current build, expected a build "
                     "newer than timestamp "
                  << build_timestamp << " but package has timestamp " << pkg_post_timestamp
                  << " and downgrade not allowed.";
       return INSTALL_ERROR;
+*/
+      pkg_pre_build_fingerprint = device_fingerprint;
     }
+
     if (pkg_pre_build_fingerprint.empty()) {
       LOG(ERROR) << "Downgrade package must have a pre-build version set, not allowed.";
       return INSTALL_ERROR;
