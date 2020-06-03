@@ -467,7 +467,7 @@ int main(int argc, char** argv) {
     device->RemoveMenuItemForAction(Device::ENTER_RESCUE);
   }
 
-  if (get_build_type() != "userdebug") {
+  if (get_build_type() == "eng") {
     device->RemoveMenuItemForAction(Device::ENABLE_ADB);
   }
 
