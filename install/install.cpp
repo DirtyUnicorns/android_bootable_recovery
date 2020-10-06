@@ -562,8 +562,6 @@ InstallResult InstallPackage(Package* package, const std::string_view package_id
   InstallResult result;
   std::vector<std::string> log_buffer;
 
-  ui->Print("Supported API: %d\n", kRecoveryApiVersion);
-
   ui->Print("Finding update package...\n");
   LOG(INFO) << "Update package id: " << package_id;
   if (!package) {
